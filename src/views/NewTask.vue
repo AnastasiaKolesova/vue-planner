@@ -2,24 +2,28 @@
 	<div v-if="isModal">
 		<div class="modal-backdrop" @click="close"></div>
 		<div class="modal">
-			<h2>Создание новой задачи</h2>
+			<div class="modal__header">
+				<h2 class="modal__title">Создание новой задачи</h2>
+				<div class="modal__close" @click="close">X</div>
+			</div>
+			
 			<form @submit.prevent="createTask">
 
-				<div class="form-control">
+				<div class="form-custom">
 					<label for="name">Название задачи*</label>
 					<input type="text" id="name" v-model="title" v-bind="titleAttrs">
 					<small class="text-danger">{{ errors.title }}</small>
 				</div>
-				<div class="form-control">
+				<div class="form-custom">
 					<label for="deadline">Дата дэдлайна*</label>
 					<input type="date" id="deadline" v-model="deadline" v-bind="deadlineAttrs">
 					<small class="text-danger">{{ errors.deadline }}</small>
 				</div>
-				<div class="form-control">
+				<div class="form-custom">
 					<label for="description">Описание задачи</label>
 					<textarea name="description" type="text" id="description" v-model="description" v-bind="descriptionAttrs"></textarea>
 				</div>
-				<div class="form-control">
+				<div class="form-custom">
 					<label for="importance">Приоритетнось задачи*</label>
 					<select name="importance" id="importance" v-model="importance" v-bind="importanceAttrs">
 						<option value="current">Текущая</option>
@@ -27,7 +31,7 @@
 					</select>
 					<small class="text-danger">{{ errors.importance }}</small>
 				</div>
-				<div class="form-control">
+				<div class="form-custom">
 					<label for="statusTask">Статус</label>
 					<select name="statusTask" id="statusTask" v-model="statusTask" v-bind="statusTaskAttrs">
 						<option value="awaits">Ожидает</option>

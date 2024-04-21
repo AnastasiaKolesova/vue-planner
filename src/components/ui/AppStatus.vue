@@ -1,5 +1,5 @@
 <template>
-  <div :class="['mt-1','badge', className]"> 
+  <div :class="['card__status', 'status', className]"> 
 	{{text}}
   </div>
 </template>
@@ -13,7 +13,7 @@ export default {
 		
 
 		const textMap = {
-			awaits: 'Ожидает выполнения',
+			awaits: 'Ожидает',
 			'at-work': 'В работе',
 			canceled: 'Отменена',
 			completed: 'Завершена',

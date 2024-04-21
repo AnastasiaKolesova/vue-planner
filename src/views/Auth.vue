@@ -1,24 +1,22 @@
 <template>
-	<div class="container mt-1">
-		<form class="card login" @submit.prevent="login">
-			<div class="form-control">
+		<form class="card" @submit.prevent="login">
+			<div class="form-custom">
 				<label for="email">Email</label>
 				<input name="email" type="text" id="email" v-model="email" v-bind="emailAttrs">
 				<small class="text-danger">{{ errors.email }}</small>
 			</div>
-			<div class="form-control">
+			<div class="form-custom">
 				<label for="password">Пароль</label>
 				<input name="password" :type="isShow ? 'password' : 'text' " id="password" v-model="password" v-bind="passwordAttrs">
 				<a href="#" @click="isShow = !isShow"> {{ isShow ? 'Показать' : 'Скрыть' }} пароль</a><br>
 				<small class="text-danger">{{ errors.password }}</small>
 			</div>
 
-			<div class="btns mt-1">
-				<button class="btn">Войти</button>
-				<router-link class="link"  to="/reg">Нет аккаунта? Зарегистрироваться</router-link>
+			<div class="card__btns">
+				<button class="btn primary">Войти</button>
+				<router-link class="block__item"  to="/reg">Нет аккаунта? Зарегистрироваться</router-link>
 			</div>
 		</form>
-	</div>
 </template>
 
 <script>

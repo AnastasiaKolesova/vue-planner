@@ -1,9 +1,10 @@
 <template>
 	<the-navbar></the-navbar>
-	<div class="container with-nav">
-		<app-message></app-message>
-		<router-view></router-view>
-
+	<div class="wrapper block">
+		<div class="block__container _container">
+			<app-message></app-message>
+			<router-view></router-view>
+		</div>
 	</div>
 </template>
 

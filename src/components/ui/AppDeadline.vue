@@ -1,5 +1,5 @@
 <template>
-	<div :class="['bold', {'red-deadline': isRed}]">Дэдлайн: {{ new Date(deadline).toLocaleDateString()  }}</div>
+	<div :class="['card__deadline', {'text-danger': isRed}]">Дэдлайн: {{ new Date(deadline).toLocaleDateString()  }}</div>
 </template>
 
 <script>

@@ -1,14 +1,16 @@
 <template>
-	<!-- <div class="container with-nav"> -->
-		<router-link to="/"> Все задачи</router-link>
+	<div class="_container">
+		<router-link to="/" class="block__item">Все задачи</router-link>
 		<app-loader v-if="isLoader"></app-loader>
-		<div v-else class="card mt-1"> 
-			<form @submit.prevent="updateTask">
-				<h4>
+
+	
+		<div v-else > 
+			<form @submit.prevent="updateTask" class="block__card card">
+				<h4 class="card__title">
 					{{myTask.title}}
 				</h4>
 
-				<div v-if="isRedact" class="form-control">
+				<div v-if="isRedact" class="form-custom">
 					<label for="deadline">Дата дэдлайна</label>
 					<input type="date" id="deadline" v-model="deadline" v-bind="deadlineAttrs">
 						<small class="text-danger">{{ errors.deadline }}</small>
@@ -16,7 +18,7 @@
 
 				<app-deadline v-else :deadline="myTask.deadline"></app-deadline>
 
-				<div v-if="isRedact" class="form-control">
+				<div v-if="isRedact" class="form-custom">
 					<label for="statusTask">Статус:</label>
 					<select name="statusTask" id="statusTask" v-model="statusTask" v-bind="statusTaskAttrs">
 						<option value="awaits">Ожидает</option>
@@ -27,13 +29,13 @@
 
 				<app-status v-else :type="myTask.statusTask" ></app-status>
 
-				<div v-if="isRedact" class="form-control">
+				<div v-if="isRedact" class="form-custom">
 					<label for="description">Описание:</label>
 					<textarea name="description" type="text" id="description" v-model="description" v-bind="descriptionAttrs"></textarea>
 				</div>
-				<div v-else class="pt-1">Описание: {{myTask.description}}</div>
+				<div v-else class="card__description">Описание: {{myTask.description}}</div>
 
-				<div v-if="isRedact" class="form-control">
+				<div v-if="isRedact" class="form-custom">
 					<label for="importance">Приоритетность:</label>
 					<select name="importance" id="importance" v-model="importance" v-bind="importanceAttrs">
 						<option value="current">Текущая</option>
@@ -41,23 +43,34 @@
 					</select>
 					<small class="text-danger">{{ errors.importance }}</small>
 				</div>
-				<div v-else class="pt-1">Приоритетность: {{ (myTask.importance === 'current') ?  'Текущая' : 'Приоритетная' }}
+				<div v-else class="card__priority">Приоритетность: {{ (myTask.importance === 'current') ?  'Текущая' : 'Приоритетная' }}
 				</div>
 
-				<div class="pt-1">Дата постановки задачи: {{ new Date(myTask.date).toLocaleDateString()}}</div>
+				<div class="card__date">Дата постановки задачи: {{ new Date(myTask.date).toLocaleDateString()}}</div>
 				
-				<div v-if="isRedact" class="mt-2">
+				<div v-if="isRedact" class="card__btns">
 					<button class="btn primary">Обновить задачу</button>
 					<button class="btn danger" @click.prevent="cancelChanges">Отменить изменения</button>
 				</div>
-				<div v-else class="mt-2">
+				<div v-else class="card__btns">
 					<button class="btn primary" @click="completeTask">Завершить задачу</button>
 					<button class="btn" @click="redact">Редактировать</button>
 					<button class="btn danger" @click="deleteTask">Удалить</button>
 				</div>
 			</form>
 		</div>
-	<!-- </div> -->
+
+
+
+
+
+	<div class="card__btns"></div>
+
+
+
+
+
+	</div>
 </template>
 
 <script>
