@@ -4,11 +4,11 @@ node_modules
 /.firebase
 .firebaserc
 firebase.json
-.env
 
 # local env files
 .env.local
 .env.*.local
+.env
 
 # Log files
 npm-debug.log*
