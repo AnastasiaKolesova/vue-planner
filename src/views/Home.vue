@@ -2,7 +2,8 @@
 
   <app-loader v-if="isLoader"></app-loader>
 
-  <div v-if="!tasks.length">
+  <div v-else>
+	<div v-if="!tasks.length">
     <div class="card">
       У вас нет активных задач. Для начала работы добавьте новую
     </div>
@@ -37,6 +38,8 @@
       </div>
     </div>
   </section>
+  </div>
+  
 </template>
 
 <script>
@@ -77,6 +80,7 @@ export default {
       tasksPriority,
       tasksCurrent,
       openTask,
+		isLoader
     };
   },
   components: {
