@@ -7,7 +7,7 @@
       <div class="header__container _container">
         <div class="header__body">
           <router-link to="/"
-            ><img src="@/assets/MyPlan (Stroke).svg" alt="myPlan"
+            ><img src="@/assets/logo.png" alt="myPlan"
           /></router-link>
 
           <nav class="header__menu menu">
