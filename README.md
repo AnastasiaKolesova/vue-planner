@@ -5,6 +5,13 @@ If you don't want to log in
 login: n@mail.ru
 password: 123456
 
+```
+This is an online task scheduler with database and authentication
+```
+
+```
+![Image alt](https://github.com/AnastasiaKolesova/vue-planner/blob/main/src/assets/planner.jpg)
+```
 ## Project setup
 ```
 npm install
