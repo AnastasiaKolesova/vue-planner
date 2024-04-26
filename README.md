@@ -1,7 +1,8 @@
 # planner
 This is an online task scheduler with database and authentication
 
-If you don't want to log in
+If you don't want to log in:
+
 login: n@mail.ru
 password: 123456
 
