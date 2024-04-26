@@ -1,5 +1,10 @@
 # planner
 
+If you don't want to log in
+
+login: n@mail.ru
+password: 123456
+
 ## Project setup
 ```
 npm install
