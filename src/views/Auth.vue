@@ -2,12 +2,12 @@
 		<form class="card" @submit.prevent="login">
 			<div class="form-custom">
 				<label for="email">Email</label>
-				<input name="email" type="text" id="email" v-model="email" v-bind="emailAttrs">
+				<input name="email" type="text" id="email" v-model.trim="email" v-bind="emailAttrs">
 				<small class="text-danger">{{ errors.email }}</small>
 			</div>
 			<div class="form-custom">
 				<label for="password">Пароль</label>
-				<input name="password" :type="isShow ? 'password' : 'text' " id="password" v-model="password" v-bind="passwordAttrs">
+				<input name="password" :type="isShow ? 'password' : 'text' " id="password" v-model.trim="password" v-bind="passwordAttrs">
 				<a href="#" @click="isShow = !isShow"> {{ isShow ? 'Показать' : 'Скрыть' }} пароль</a><br>
 				<small class="text-danger">{{ errors.password }}</small>
 			</div>

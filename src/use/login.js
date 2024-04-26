@@ -12,7 +12,7 @@ export function useLogin() {
 
 	const { errors, values, defineField, handleSubmit } = useForm({
 		validationSchema: yup.object({
-			email: yup.string().email('Введите корректный email').required('Введите логин'),
+			email: yup.string().trim().email('Введите корректный email').required('Введите логин'),
 			password: yup.string().trim().required('Введите пароль').min(5, 'пароль должен быть не менее 5 символов'),
 		})
 	})

@@ -66,7 +66,6 @@
                       <option value="awaits">Ожидает</option>
                       <option value="at-work">В работе</option>
                       <option value="canceled">Отменена</option>
-                      <option value="completed">Завершена</option>
                     </select>
                   </div>
                   <button class="btn primary">Создать</button>
