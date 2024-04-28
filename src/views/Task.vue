@@ -5,7 +5,7 @@
 
 	
 		<div v-else > 
-			<form @submit.prevent="updateTask" class="block__card card">
+			<form @submit.prevent="updateTask" class="block__card card blur">
 				<h4 class="card__title">
 					{{myTask.title}}
 				</h4>

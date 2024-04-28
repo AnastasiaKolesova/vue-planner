@@ -12,7 +12,7 @@
   <section v-else class="block__body">
     <div class="block__column">
       <h3 class="block__title">Приоритетные задачи</h3>
-      <div class="card yellow" v-for="t in tasksPriority" :key="t.title">
+      <div class="card" v-for="t in tasksPriority" :key="t.title">
         <h2 class="card__title">{{ t.title }}</h2>
         <app-deadline :deadline="t.deadline"></app-deadline>
         <div class="card__btns">
@@ -26,10 +26,10 @@
     <div class="block__column">
       <h3 class="block__title">Текущие задачи</h3>
 
-      <div class="card orange" v-for="task in tasksCurrent" :key="task.title">
+      <div class="card" v-for="task in tasksCurrent" :key="task.title">
         <h2 class="card__title">{{ task.title }}</h2>
         <app-deadline :deadline="task.deadline"></app-deadline>
-        <div class="card__btns">
+        <div class="card__btns space">
           <app-status :type="task.statusTask"></app-status>
           <button class="card__open" @click="openTask(task.id)">
             Открыть задачу

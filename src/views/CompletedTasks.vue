@@ -4,7 +4,7 @@
 	 <div class="card" v-else-if="!tasks.length">
 		У вас нет завершенных задач
 	</div>
-    <div v-else v-for="task in tasks" :key="task.id" class="block__card card">
+    <div v-else v-for="task in tasks" :key="task.id" class="block__card card blur">
       <h4 class="card__title">{{ task.title }}</h4>
 
       <div class="card__deadline">
