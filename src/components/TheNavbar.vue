@@ -1,5 +1,5 @@
 <template>
-	<teleport to="body"
+  <teleport to="body"
     ><new-task :isModal="isModal" @close="isModal = false"></new-task
   ></teleport>
   <header class="header">
@@ -7,31 +7,30 @@
       <div class="header__container _container">
         <div class="header__body">
           <router-link to="/"
-            ><img src="@/assets/logo.png" alt="myPlan"
-          /></router-link>
+            ><div class="header__logo">MyPlan</div></router-link
+          >
 
           <nav class="header__menu menu">
             <ul class="menu__list">
               <li class="menu__item">
                 <router-link class="menu__link" to="/completed"
-                  >Завершенные задачи</router-link
+                  >Выполненные задачи</router-link
                 >
+              </li>
+				  <li class="menu__item">
+					<button class="header__btn" @click.prevent="modalShow">
+                <img src="@/assets/add.svg" alt="добавить" />
+              </button>
               </li>
               <li class="menu__item">
                 <a href="#" @click.prevent="logout"
                   ><img src="@/assets/Union.svg" alt="выход" />
                 </a>
               </li>
+              
             </ul>
           </nav>
         </div>
-      </div>
-    </div>
-    <div class="header__bottom">
-      <div class="header__btn _container">
-        <button class="block__btn" @click.prevent="modalShow">
-          <img src="@/assets/add.svg" alt="добавить" /><span>добавить задачу</span>
-        </button>
       </div>
     </div>
   </header>
@@ -47,9 +46,9 @@ export default {
   setup() {
     const store = useStore();
     const router = useRouter();
-	 const isModal = ref(false);
+    const isModal = ref(false);
 
-	 function modalShow() {
+    function modalShow() {
       isModal.value = true;
     }
 
@@ -59,7 +58,7 @@ export default {
         store.state["request/tasks"] = [];
         router.push("/auth");
       },
-		isModal,
+      isModal,
       modalShow,
     };
   },

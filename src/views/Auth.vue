@@ -1,5 +1,5 @@
 <template>
-		<form class="card" @submit.prevent="login">
+		<form class="card blur" @submit.prevent="login">
 			<div class="form-custom">
 				<label for="email">Email</label>
 				<input name="email" type="text" id="email" v-model.trim="email" v-bind="emailAttrs">

@@ -1,6 +1,6 @@
 <template>
 	<div class="_container">
-		<form class="card" @submit.prevent="registration">
+		<form class="card blur" @submit.prevent="registration">
 			<div>Используйте любую почту и пароль, подтверждение через почтовый аккаунт не требуется</div>
 			<div class="form-custom">
 				<label for="email">Введите email</label>
